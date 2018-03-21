@@ -85,6 +85,10 @@ d3.json('top50.json', function (error, graph) {
                 .classed('legend-hover', false);
         });
 
+    formatGenre = function(lg) {
+        return lg.join(", ");
+    };
+
     const nodeGroup = svg.append('g')
         .attr('class', 'nodes')
         .selectAll('.node')
@@ -113,7 +117,7 @@ d3.json('top50.json', function (error, graph) {
             tooltipDiv.transition()
                 .duration(200)
                 .style('opacity', 0.7);
-            tooltipDiv.html(`${d.name}`)
+            tooltipDiv.html(`- ${d.name} -<br>${formatGenre(d.genres)}`)
                 .style("left", d3.event.pageX + "px")
                 .style("top", d3.event.pageY + "px");
 

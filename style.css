@@ -11,6 +11,7 @@
 div.tooltip {
     position: absolute;
     text-align: center;
+    line-height: 150%;
     width: 110px;
     font-family: 'Raleway', sans-serif;
     font-size: 10px;

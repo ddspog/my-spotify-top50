@@ -6,7 +6,7 @@
 -->
 <html>
 <head>
-    <title>Directive by HTML5 UP</title>
+    <title>ddspog - Meu Top 50</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -21,8 +21,8 @@
 <div id="header">
     <span class="logo icon fa-spotify"></span>
     <h1>Meu top 50</h1>
-    <p>Sempre que me perguntam qual o tipo de música que mais gosto, fico querendo responder algo diferente a "de tudo um pouco".<br>
-        Mostro aqui esta visualização com meus 50 artistas preferidos no Spotify para olhar como eles se relacionam entre si.
+    <p>Sempre me achei eclético em relação a música. Mas gostaria de entender mais sobre meus gostos musicais.<br>
+        Nesta visualização estão meus 50 artistas preferidos no Spotify, focada no relacionamento entre cada um.
     </p>
 </div>
 
@@ -31,9 +31,12 @@
 
     <div class="box container">
         <section>
-            <p>O grafo a seguir apresenta as relacões entre artistas mecionadas. Para ressaltar gêneros musicais deslize seu mouse sobre os gêneros à esquerda.
-                Em qualquer momento pode passar por cima de algum artista para ver com que outros artistas está relacionado mais claramente.
-                Clique em algum dos artistas para abrir sua página no Spotify em uma nova aba.
+            <p>
+    O grafo a seguir evidencia diversas relacões entre os artistas mencionados. Para <strong>ressaltar gêneros musicais </strong> deslize seu mouse sobre os gêneros na legenda à esquerda.
+    
+    Ainda com o ponteiro do mouse, passe por cima de alguém para <strong> destacar um artista e com quem ele se relaciona </strong> nos parâmetros desta análise.
+    
+    Clique em algum dos músicos para <strong> abrir sua página no Spotify </strong> em uma nova aba.
             </p>
         </section>
         <section>
@@ -51,28 +54,70 @@
                 </defs>
             </svg>
         </section>
-        <header>
-            <h2>Aventura, Diogo Nogueira, bastante Rock, Pop e MPB</h2>
-        </header>
+<header>
+    <h2>Aventura, Jason Mraz, MPB, e bastante Rock</h2>
+</header>
+<section>
+    <h4>
+    O que pude concluir:
+    </h4>
+    <ul class="default">
+        <li>
+    Gosto muito de músicas Pop, e de gêneros do Rock.
+        </li>
+        <li>
+    Aventura tem destaque por conter várias músicas de gêneros diferentes, ou participações especiais em outros gêneros. O mesmo pode-se dizer de Crosby, Stills & Nash.
+        </li>
+        <li>
+    Posso apontar 4 clusters nessa rede: um relacionado ao Pop e música Latina com Aventura no centro; o segundo centrado em Rock com Crosby, Stills & Nash; um terceiro com bandas Brasileiras de MPB, Sertanejo e Samba; por fim o grupo sem relacionamentos definidos por gêneros musicais no grafo.
+        </li>
+        <li>
+    Escuto gêneros variados, e muitos de total desconhecimento para mim. Eu até entendo mais ou menos do que se trata Synthpop, mas Adult Standards, Neo Mellow, não faço idéia do que significa.
+        </li>
+        <li>
+    Achei impressionante Matheus & Kauan não ter gênero associado ainda no Spotify. Isto porque recentemente era uma das bandas mais ouvidas no Brasil. Hozen também não têm gênero definido, talvez por estar no início da carreira.
+        </li>
+        <li>
+    Se fosse eleger uma banda para melhor representar meus gostos musicais neste grafo, escolheria Jason Mraz pois ele conecta os Hubs com Aventura e Crosby, Stills & Nash, tendo vários gêneros em comum. O que condiz comigo, Jason Mraz é de fato um artista que têm mais músicas para "qualquer momento" dentre os mostrados.
+        </li>
+        <li>
+    Irei ressaltar aqui que meu Spotify já foi bastante usado por mim enquanto estava com amigos e colegas. Assim Victor e Leo (que por sinal está no Top 1), e outras bandas de Sertanejo, estão aí por estas razões apenas.
+        </li>
+    </ul>
+</section>
         <section>
-            <h4>
-                Com esta visualização podemos concluir algumas coisas de meus gostos musicais:
-            </h4>
-            <ul class="default">
-                <li>
-                    Gosto muito de músicas Pop, e de gêneros do Rock.
-                </li>
-                <li>
-                    Aventura tem destaque por conter várias músicas de gêneros diferentes, ou participações especiais em outros gêneros. O mesmo pode-se dizer de Crosby, Stills & Nash.
-                </li>
-                <li>
-                    Posso apontar 4 clusters nessa rede: um relacionado ao Pop e música Latina com Aventura no centro; o segundo centrado em Rock com Crosby, Stills & Nash; um terceiro com bandas Brasileiras de MPB, Sertanejo e Samba; por fim o grupo sem relacionamentos definidos por gêneros musicais no grafo.
-                </li>
-                <li>
-                    Escuto gêneros variados, e muitos de total desconhecimento para mim. Eu até entendo mais ou menos do que se trata Synthpop, mas Adult Standards, Neo Mellow, não faço idéia do que significa.
-                </li>
-            </ul>
-        </section>
+            <p>
+    <h2>Os dados foram coletados da seguinte forma:</h2>
+    <ol>
+        <li>
+    1. Coletei o meu Top 50 de Artistas por meio do seguinte
+    <a href="https://beta.developer.spotify.com/console/get-current-user-top-artists-and-tracks/?type=&time_range=&limit=&offset=">endpoint</a>.
+        </li>
+        <li>
+    2. Armazenei informações de cada artista como gêneros musicais, id, nome, imagem, endereço e popularidade.
+        </li>
+        <li>
+    3. Encontrei relacionamentos do tipo "related" pesquisando os artistas relacionados por meio deste <a href="https://beta.developer.spotify.com/console/get-artist-related-artists/">endpoint</a>.
+        </li>
+        <li>
+    4. Para cada artista, encontrei relacionamentos de mesmo gênero musical, realizando uma busca por entre os artistas restantes.
+        </li>
+        <li>
+    5. Em todos os relacionamentos encontrados, calculei uma variável popularidade, multiplicando a popularidade dos artistas envolvidos.
+        </li>
+        <li>
+    6. Para cada tipo de relacionamento, coloquei no máximo uma conexão por artista, para agrupar os gêneros musicais com o mínimo de relações. Filtrei as conexões por popularidade. O resultado disto está disposto acima.
+        </li>
+    </ol>
+    Decidi minimizar o número de relações de modo a não poluir visualmente o gráfico, já que com menos arestas seria mais fácil de analisá-lo. 
+        </p>
+    </section>
+    <section>
+        <h2>Para mais detalhes:</h2>
+        <p>
+    Consulte o <a href="https://github.com/ddspog/my-spotify-top50">github</a> do projeto. Os dados foram obtidos utilizando um Jupyter Notebook configurado para rodar com Node.
+        </p>
+    </section>
     </div>
 
 
@@ -83,7 +128,11 @@
     <div class="container 75%">
 
         <ul class="icons">
-            <li><a href="https://github.com/ss1993/my-spotify-top50" class="icon fa-github"><span class="label">Github</span></a></li>
+<li>
+    <a href="https://github.com/ddspog/my-spotify-top50" class="icon fa-github">
+        <span class="label">Github</span>
+    </a>
+</li>
         </ul>
 
         <ul class="copyright">
